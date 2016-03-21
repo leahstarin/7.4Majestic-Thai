@@ -30,6 +30,8 @@ index: function(){
   );
 },
 menupage: function(){
+  console.log('testing');
+  ReactDOM.unmountComponentAtNode(document.getElementById('middle'))
   ReactDOM.render(
     React.createElement(MenuItemComponent,{collection: menuCollection, checkout: cartCollection}),
     document.getElementById('middle')
@@ -39,4 +41,4 @@ menupage: function(){
 });
 
 module.exports =  new Router();
-menuCollection.fetch();
+//menuCollection.fetch();

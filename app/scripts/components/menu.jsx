@@ -12,6 +12,8 @@ var MenuItemComponent = React.createClass({
   },
 
   render: function(){
+    console.log('this.props.collection: ', this.props.collection);
+
     var menuItems = this.props.collection.map(function(model){
       var boundItemClick = this.handleClick.bind(this, model);
      return (
