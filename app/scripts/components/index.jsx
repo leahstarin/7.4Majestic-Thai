@@ -1,12 +1,32 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var $ = require('jquery');
+var Backbone = require('backbone');
+
+
+
+
+var HomePage = React.createClass({
+  handleClick: function(e){
+    e.preventDefault();
+    Backbone.history.navigate('menu', {trigger: true});
+  },
+  render: function(){
+    return(
+      <div className="row">
+        <HoursComponent/>
+        <LocationComponent/>
+        <MenuComponent onClick={this.handleClick}/>
+      </div>
+    );
+  }
+})
 
 
 var HoursComponent = React.createClass({
  render: function(){
    return (
-     <div className="hours">
+     <div className="hours col-sm-4">
        <h2>Hours</h2>
        <p>Mon-Sat: 11:00am-2:00pm</p>
        <h2>Dinner</h2>
@@ -21,7 +41,7 @@ var HoursComponent = React.createClass({
 var LocationComponent = React.createClass({
   render: function(){
     return (
-      <div className="location">
+      <div className="location col-sm-4">
         <h2>Location</h2>
         <p>Address: 106 N Main St, Greenville, SC 29601</p>
         <p>Phone:(864) 241-9988</p>
@@ -33,34 +53,17 @@ var LocationComponent = React.createClass({
 
 var MenuComponent = React.createClass({
   render: function(){
-    return ( <div>
-      <h2 className="menu"><a href="#">Menu</a></h2>
-      <p>Appetizers</p>
-      <p>Dinner</p>
-      <p>Drinks</p>
-      <p>Dessert</p>
-           </div>
+    return (
+      <div className="menu col-sm-4">
+        <h2><a href="#" onClick={this.props.onClick}>Menu</a></h2>
+        <p>Appetizers</p>
+        <p>Dinner</p>
+        <p>Drinks</p>
+        <p>Dessert</p>
+      </div>
     )
   }
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-module.exports = {
-'HoursComponent' : HoursComponent,
-'LocationComponent': LocationComponent,
-'MenuComponent' : MenuComponent
-
-};
+module.exports = HomePage;

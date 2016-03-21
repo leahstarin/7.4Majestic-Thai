@@ -17,9 +17,17 @@ img {
 }
 
 .header{
+  span {
+    color: #D82CDE;
+  }
   letter-spacing: 25px;
   text-transform: capitalize;
   text-align: center;
+  font-family: 'Raleway', sans-serif;
+
+}
+.name {
+  font-size: 65px;
 }
 
 .carousel-inner  > .item  > img{
@@ -36,21 +44,33 @@ img {
 .hours {
 text-align: center;
 text-decoration: none;
+font-family: 'Raleway', sans-serif;
+padding-bottom: 50px;
+border-right: solid 2px black;
 }
 
 .menu {
-  color: black;
-  text-decoration: none;
+
   text-align: center;
+  font-family: 'Raleway', sans-serif;
+  padding-bottom: 50px;
+  border-left: solid 2px black;
+  h2{
+    a{
+      text-decoration: none;
+      color: black;
+    }
+  }
 
 }
 
 .location {
   text-align: center;
+  font-family: 'Raleway', sans-serif;
 }
 
 .footer {
-  background-color: #C43FB5;
-  height: 100px;
+  background-color: #FFFFFF;
+  height: 50px;
   width: 100%;
 }
